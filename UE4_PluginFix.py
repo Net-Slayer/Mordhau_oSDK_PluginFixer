@@ -6,6 +6,8 @@ directory = os.getcwd()
 print("NetSlayer's Mordhau plugin fixer v1.0")
 print("please ensure this file is run from \"Mordhau_Recap\Plugins\" folder!")
 print("**********************")
+
+input("Press Enter to continue...")
 print("Script is in " + directory)
 checkpath = r"Mordhau_Recap\Plugins"
 
@@ -13,8 +15,11 @@ checkpath = r"Mordhau_Recap\Plugins"
 if directory.endswith(checkpath):
     print("Script is in correct location!\n")
 else:
-    sys.exit(
+    print(
         "incorrect location for this script, please move to MORDHAUEditor\Mordhau_Recap\Plugins")
+    input("Press Enter to exit!")
+    sys.exit()
+
 
 # Does the engine file exist
 enginePath = directory.replace(
@@ -22,8 +27,9 @@ enginePath = directory.replace(
 if os.path.isfile(enginePath):
     print("Engine file found at :\n" + enginePath + "\n")
 else:
-    sys.exit(
-        "Engine modules path invalid \n File not found at : " + enginePath)
+    print("Engine modules path invalid \n File not found at : " + enginePath)
+    input("Press Enter to exit!")
+    sys.exit()
 
 # Grab ID from engine file
 EngineBuildID = ""
@@ -42,8 +48,10 @@ engineFile.close()
 
 # Did we grab the ID from the file?
 if EngineBuildID == "":
-    sys.exit(
+    print(
         "BuildId could not be found in engine path")
+    input("Press Enter to exit!")
+    sys.exit()
 subfolders = [name for name in os.listdir(".") if os.path.isdir(name)]
 print("**********************")
 print("Beginning fix operations")
@@ -86,6 +94,8 @@ for folder in subfolders:
             editFile.close()
     else:
         print("Invalid file path, this plugin will not be processed")
+
 print("**********************")
 print("Process Complete! Files processed: " + str(flagCounter))
 print("**********************")
+input("Press Enter to exit!")
