@@ -10,7 +10,7 @@ It will first grab the installed build ID from the local engine (MORDHAUEditor\I
 And run through the configuration files of every folder in the "MORDHAUEditor\Mordhau_Recap\Plugins"
 changing their build ID's to match.
 
-Credits:
+## Credits:
 
 Thank you to Leprechaun003 for the custom icon!
 
