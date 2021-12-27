@@ -3,7 +3,9 @@ import re
 import sys
 
 directory = os.getcwd()
-
+print("NetSlayer's Mordhau plugin fixer v1.0")
+print("please ensure this file is run from \"Mordhau_Recap\Plugins\" folder!")
+print("**********************")
 print("Script is in " + directory)
 checkpath = r"Mordhau_Recap\Plugins"
 
@@ -43,8 +45,9 @@ if EngineBuildID == "":
     sys.exit(
         "BuildId could not be found in engine path")
 subfolders = [name for name in os.listdir(".") if os.path.isdir(name)]
-
-
+print("**********************")
+print("Beginning fix operations")
+print("**********************")
 # for every folder in plugins look for a module file
 modulesFile = ""
 
@@ -82,6 +85,7 @@ for folder in subfolders:
                 editFile.write(item + "\n")
             editFile.close()
     else:
-        print("invalid file path")
-
+        print("Invalid file path, this plugin will not be processed")
+print("**********************")
 print("Process Complete! Files processed: " + str(flagCounter))
+print("**********************")
