@@ -3,20 +3,21 @@ import re
 import sys
 
 directory = os.getcwd()
-print("NetSlayer's Mordhau plugin fixer v1.0")
-print("please ensure this file is run from \"Mordhau_Recap\Plugins\" folder!")
+print("NetSlayer's Mordhau plugin fixer v1.2 (19/01/23)")
+print("Please ensure this file is run from \"mordhau\Plugins\" folder!")
+print("Where this folder contains plugins that are compatible with UE4.26")
 print("**********************")
 
 input("Press Enter to continue...")
 print("Script is in " + directory)
-checkpath = r"Mordhau_Recap\Plugins"
+checkpath = r"mordhau\Plugins"
 
 # Are we in the correct folder
 if directory.endswith(checkpath):
     print("Script is in correct location!\n")
 else:
     print(
-        "incorrect location for this script, please move to MORDHAUEditor\Mordhau_Recap\Plugins")
+        "incorrect location for this script, please move to MORDHAUEditor\mordhau\Plugins")
     input("Press Enter to exit!")
     sys.exit()
 
